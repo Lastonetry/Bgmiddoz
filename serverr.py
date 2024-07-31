@@ -1,12 +1,11 @@
-#bgmiddoserpython
-
+import os
 import telebot
 import subprocess
 import datetime
-import os
 
 from keep_alive import keep_alive
 keep_alive()
+
 # Insert your Telegram bot token here
 bot = telebot.TeleBot('7040771689:AAGqgdv8i66m-UJwCuNoKE1CLbkTdo9KBEg')
 
@@ -15,8 +14,6 @@ admin_id = {"7462351545"}
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
-
-# File to store command logs
 LOG_FILE = "log.txt"
 
 def read_users():
@@ -365,11 +362,9 @@ def broadcast_message(message):
 
     bot.reply_to(message, response)
 
-
-
-
-#bot.polling()
-while True:
+# Bot polling loop with proper port binding for Heroku
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))
     try:
         bot.polling(none_stop=True)
     except Exception as e:
