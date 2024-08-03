@@ -38,7 +38,7 @@ def read_free_users():
                         user_id, credits = user_info
                         free_user_credits[user_id] = int(credits)
                     else:
-                        print(f"Ignoring invalid line in free user file: {line}")
+                        print("Ignoring invalid line in free user file: {}".format(line))
     except FileNotFoundError:
         pass
 
