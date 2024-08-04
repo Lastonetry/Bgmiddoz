@@ -4,14 +4,10 @@ import telebot
 import subprocess
 import datetime
 import os
-
+from config import Telegram
 from keep_alive import keep_alive
 keep_alive()
-# Insert your Telegram bot token here
-bot = telebot.TeleBot('7040771689:AAGqgdv8i66m-UJwCuNoKE1CLbkTdo9KBEg')
 
-# Admin user IDs
-admin_id = {"7462351545"}
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
