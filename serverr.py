@@ -4,7 +4,7 @@ import telebot
 import subprocess
 import datetime
 import os
-from config import Telegram
+from config import Config
 from keep_alive import keep_alive
 keep_alive()
 
